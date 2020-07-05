@@ -13,6 +13,11 @@ public class FirstAppVerticleTest {
   @BeforeEach
   void deploy_verticle(Vertx vertx, VertxTestContext testContext) {
     vertx.deployVerticle(new FirstAppVerticle(), testContext.succeeding(id -> testContext.completeNow()));
+    /**
+    vertx = Vertx.vertx();
+    vertx.deployVerticle(FirstAppVerticle.class.getName(),
+            context.asyncAssertSuccess());
+     **/
   }
 
   @Test
